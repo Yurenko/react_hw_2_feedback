@@ -34,16 +34,17 @@ class App extends Component {
     return (
       <div>
         <FeedbackOptions onLeaveFeedback={this.handleIncrement} />
-{total ? <Statistics
-          good={good}
-          neutral={neutral}
-          bad={bad}
-          total={total}
-          positivePercentage={positivePercentage}
-        /> : <Notification message="No feedback given"/>}
-        
-
-        
+        {total ? (
+          <Statistics
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            total={total}
+            positivePercentage={positivePercentage}
+          />
+        ) : (
+          <Notification message="No feedback given" />
+        )}
       </div>
     );
   }
